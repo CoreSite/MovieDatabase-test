@@ -10,4 +10,15 @@ class DefaultController extends Controller
     {
         return $this->render('CSMovieDatabaseBundle:Default:index.html.twig', array());
     }
+
+    public function formAction()
+    {
+        return $this->render('CSMovieDatabaseBundle:Default:form.html.twig', array());
+    }
+
+    public function listAction()
+    {
+        return $this->render('CSMovieDatabaseBundle:Default:list.html.twig', array());
+    }
+
 }

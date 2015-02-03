@@ -1,13 +1,35 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-    </body>
+<head>
+    {% block head %}
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>{% block title %}Movie Database{% endblock %}</title>
+        {% block stylesheets %}
+            {% stylesheets
+                '@CSMovieDatabaseBundle/Resources/public/css/bootstrap.css'
+                '@CSMovieDatabaseBundle/Resources/public/css/bootstrap-theme.css'
+                '@CSMovieDatabaseBundle/Resources/public/css/style.css'
+                output='css/style'
+            %}
+            <link href="{{ asset_url }}" rel="stylesheet" media="all" />
+            {% endstylesheets %}
+        {% endblock stylesheets %}
+        <link rel="icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
+        <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
+    {% endblock head %}
+</head>
+<body role="document">
+{% block layout %}{% endblock layout %}
+{% block javascripts %}
+    {% javascripts
+        '@CSMovieDatabaseBundle/Resources/public/js/jquery.min.js'
+        '@CSMovieDatabaseBundle/Resources/public/js/bootstrap.min.js'
+        output='js/all'
+    %}
+    <script type="text/javascript" src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+{% endblock javascripts %}
+</body>
 </html>
