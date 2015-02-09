@@ -1,4 +1,7 @@
 services:
+    cs_movie_database.form:
+        class: CS\MovieDatabaseBundle\Service\FormService
+
 #    cs_movie_database.example:
 #        class: CS\MovieDatabaseBundle\Example
 #        arguments: [@service_id, "plain_value", %parameter%]

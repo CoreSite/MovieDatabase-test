@@ -1,41 +1,25 @@
-{% extends 'CSMovieDatabaseBundle::layout.html.twig' %}
-
-{% block body %}
-    <div class="page-header">
-        <h1>Movies</h1>
-    </div>
-    <div class="row">
-        <div class="col-md-12">
-            <table class="table table-striped">
-                <thead>
-                <tr>
-                    <th>Title</th>
-                    <th>Year</th>
-                    <th>Rating</th>
-                    <th>IP Address</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>Larry</td>
-                    <td>the Bird</td>
-                    <td>@twitter</td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-{% endblock body %}
+<div class="col-md-12">
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Title</th>
+            <th>Year</th>
+            <th>Rating</th>
+            <th>IP Address</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for movie in pagination %}
+        <tr>
+            <td>{{ movie.title }}</td>
+            <td>{{ movie.year }}</td>
+            <td>{% if movie.rating is not empty %}{{ movie.rating }}{% else %}-{% endif %}</td>
+            <td>{% if movie.authorIp %}{{ movie.authorIp }}{% else %}-{% endif %}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+<div class="col-md-12">
+    {{ knp_pagination_render(pagination) }}
+</div>

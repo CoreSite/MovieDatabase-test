@@ -1,3 +1,13 @@
 cs_movie_database_homepage:
     path:     /
+    defaults: { _controller: CSMovieDatabaseBundle:Default:index }
+
+cs_movie_database_list:
+    path:     /list
     defaults: { _controller: CSMovieDatabaseBundle:Default:list }
+
+cs_movie_database_add:
+    path:     /add
+    defaults: { _controller: CSMovieDatabaseBundle:Default:add }
+    requirements:
+            _method:  POST

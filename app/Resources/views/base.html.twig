@@ -11,7 +11,7 @@
                 '@CSMovieDatabaseBundle/Resources/public/css/bootstrap.css'
                 '@CSMovieDatabaseBundle/Resources/public/css/bootstrap-theme.css'
                 '@CSMovieDatabaseBundle/Resources/public/css/style.css'
-                output='css/style'
+                output='css/style.css'
             %}
             <link href="{{ asset_url }}" rel="stylesheet" media="all" />
             {% endstylesheets %}
@@ -26,7 +26,10 @@
     {% javascripts
         '@CSMovieDatabaseBundle/Resources/public/js/jquery.min.js'
         '@CSMovieDatabaseBundle/Resources/public/js/bootstrap.min.js'
-        output='js/all'
+        '@CSMovieDatabaseBundle/Resources/public/js/jquery.validate.min.js'
+        '@CSMovieDatabaseBundle/Resources/public/js/jquery.form.min.js'
+        '@CSMovieDatabaseBundle/Resources/public/js/main.js'
+        output='js/base.js'
     %}
     <script type="text/javascript" src="{{ asset_url }}"></script>
     {% endjavascripts %}
