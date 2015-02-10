@@ -60,6 +60,7 @@ var csMovie = '';
                     if(data.success != undefined && data.success == true)
                     {
                         csMovie.getList($('.movie_list').data('url'), 1);
+                        $(form).resetForm();
                     }
                     else
                     {
